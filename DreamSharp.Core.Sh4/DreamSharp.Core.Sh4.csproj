@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C81C9248-B124-430B-8161-968405F3BE0C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DreamSharp.Core.Sh4</RootNamespace>
+    <AssemblyName>DreamSharp.Core.Sh4</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExecutionCore.cs" />
+    <Compile Include="FloatingPointRegister.cs" />
+    <Compile Include="FloatingPointStatusControlRegister.cs" />
+    <Compile Include="Instructions\Arithmetic\AddInstruction.cs" />
+    <Compile Include="Instructions\Arithmetic\AddWithCarryInstruction.cs" />
+    <Compile Include="Instructions\Arithmetic\AddWithOverflowInstruction.cs" />
+    <Compile Include="Instructions\Arithmetic\CompareInstruction.cs" />
+    <Compile Include="Instructions\Arithmetic\SubInstruction.cs" />
+    <Compile Include="Instructions\Branch\BranchInstruction.cs" />
+    <Compile Include="Instructions\FloatingPoint\FsqrtInstruction.cs" />
+    <Compile Include="Instructions\Instruction.cs" />
+    <Compile Include="Instructions\InstructionInstantiator.cs" />
+    <Compile Include="Instructions\Logic\NotInstruction.cs" />
+    <Compile Include="Instructions\Logic\XorInstruction.cs" />
+    <Compile Include="Instructions\Shift\ShadInstruction.cs" />
+    <Compile Include="Instructions\SystemControl\ClearInstruction.cs" />
+    <Compile Include="Instructions\SystemControl\LdsInstruction.cs" />
+    <Compile Include="Instructions\SystemControl\SetInstruction.cs" />
+    <Compile Include="Instructions\Transfer\MoveByteInstruction.cs" />
+    <Compile Include="Instructions\Transfer\MoveInstruction.cs" />
+    <Compile Include="Instructions\Transfer\MoveWordInstruction.cs" />
+    <Compile Include="Instructions\Transfer\SwapInstruction.cs" />
+    <Compile Include="Instructions\Transfer\XtrctInstruction.cs" />
+    <Compile Include="ProgramCounter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs" />
+    <Compile Include="SinglePrecisionRegister.cs" />
+    <Compile Include="StatusRegister.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
